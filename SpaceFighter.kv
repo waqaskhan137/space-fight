@@ -1,0 +1,25 @@
+#:kivy 2.0.0
+
+<SpaceFighterGame>:
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'assets/spaceArt/png/Background/starBackground.png'
+
+<GameOverScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'Game Over'
+            font_size: '40sp'
+        Label:
+            id: score_label
+            text: 'Score: 0'
+            font_size: '30sp'
+        Button:
+            text: 'Restart'
+            on_press: root.restart_game()
+        Button:
+            text: 'Quit'
+            on_press: app.stop()

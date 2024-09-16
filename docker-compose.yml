@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  buildozer:
+    image: kivy/buildozer
+    container_name: kivy_buildozer
+    volumes:
+      - .:/home/user/hostcwd
+    working_dir: /home/user/hostcwd
+    environment:
+      ANDROIDSDK: '/home/user/.buildozer/android/platform/android-sdk'
+      ANDROIDNDK: '/home/user/.buildozer/android/platform/android-ndk-r25b'
+      ANDROIDAPI: '31'
+      NDKAPI: '21'
+    command: buildozer android debug
